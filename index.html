@@ -302,24 +302,30 @@ section[id]{scroll-margin-top:64px}
 
 
 /* ===== IMAGE SIZE & PROPORTION FIXES ===== */
-.page-hero img{width:100%;height:auto;display:block}
-.djs-hero img{width:100%;height:auto;display:block}
+/* Banners: container controla proporção, imagem cobre sem achatar */
+.page-hero{aspect-ratio:16/7}
+.page-hero img{width:100%;height:100%;object-fit:cover;object-position:center}
+.djs-hero{aspect-ratio:16/7}
+.djs-hero img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.dj-stage-img{aspect-ratio:16/5;object-fit:cover;object-position:center;display:block;width:100%}
+/* Cards e flyers: mostrar imagem completa */
 .dj-card img{width:100%;height:auto;display:block}
-.dj-stage-img{width:100%;height:auto;display:block}
 .ev-flyer{width:100%;height:auto;display:block}
 .sobre-img{width:100%;height:auto;display:block}
+/* Galeria */
 .gi img{width:100%;height:100%;object-fit:cover}
 .gi{aspect-ratio:1}
 .gi:first-child,.gi:nth-child(4){aspect-ratio:2/1}
 
 @media(min-width:768px){
+  .page-hero{aspect-ratio:16/6}
+  .djs-hero{aspect-ratio:16/6}
   .ggrid{gap:4px}
 }
 
 @media(min-width:960px){
-  .page-hero img{max-height:45vh}
-  .djs-hero img{max-height:40vh}
-  .dj-stage-img{max-height:35vh}
+  .page-hero{aspect-ratio:21/7}
+  .djs-hero{aspect-ratio:21/7}
 }
 </style>
 </head>
