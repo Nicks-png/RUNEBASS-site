@@ -302,30 +302,33 @@ section[id]{scroll-margin-top:64px}
 
 
 /* ===== IMAGE SIZE & PROPORTION FIXES ===== */
-.page-hero img{aspect-ratio:16/7;object-fit:cover;object-position:center}
-.ev-flyer{aspect-ratio:4/3;object-fit:cover;object-position:center}
-.dj-card img{aspect-ratio:3/4;object-fit:cover;object-position:center top}
-.djs-hero img{aspect-ratio:21/9;object-fit:cover;object-position:center}
-.dj-stage-img{aspect-ratio:21/7;object-fit:cover;object-position:center top}
-.sobre-img{aspect-ratio:16/7;object-fit:cover}
+.page-hero img{width:100%;object-fit:cover;object-position:center;max-height:280px}
+.djs-hero img{width:100%;object-fit:cover;object-position:center;max-height:260px}
+.dj-card img{width:100%;object-fit:cover;object-position:center top;max-height:380px}
+.dj-stage-img{width:100%;object-fit:cover;object-position:center;max-height:220px}
+.ev-flyer{width:100%;object-fit:cover;object-position:center;max-height:220px}
+.sobre-img{width:100%;object-fit:cover;max-height:300px}
+.gi img{width:100%;height:100%;object-fit:cover}
+.gi{aspect-ratio:1}
+.gi:first-child,.gi:nth-child(4){aspect-ratio:2/1}
 
 @media(min-width:768px){
-  .page-hero img{aspect-ratio:21/7}
-  .dj-card img{aspect-ratio:2/3}
-  .ev-flyer{aspect-ratio:16/9}
-  .sobre-img{aspect-ratio:16/6}
+  .page-hero img{max-height:340px}
+  .djs-hero img{max-height:320px}
+  .dj-card img{max-height:440px}
+  .ev-flyer{max-height:260px}
+  .sobre-img{max-height:360px}
+  .dj-stage-img{max-height:260px}
   .ggrid{gap:4px}
-  .gi:first-child img,.gi:nth-child(4) img{aspect-ratio:16/7}
-  .gi:not(:first-child):not(:nth-child(4)) img{aspect-ratio:4/3}
 }
 
 @media(min-width:1280px){
-  .page-hero img{aspect-ratio:21/6;max-height:60vh}
-  .ev-flyer{aspect-ratio:16/7;max-height:340px}
-  .dj-card img{max-height:520px}
-  .djs-hero img{max-height:55vh}
-  .sobre-img{max-height:480px}
-  .dj-stage-img{max-height:320px}
+  .page-hero img{max-height:400px}
+  .djs-hero img{max-height:380px}
+  .dj-card img{max-height:500px}
+  .ev-flyer{max-height:300px}
+  .sobre-img{max-height:400px}
+  .dj-stage-img{max-height:280px}
 }
 </style>
 </head>
