@@ -1,0 +1,94 @@
+name: Atualizar Stats Strava
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Todo dia às 6h UTC
+  workflow_dispatch:       # Permite rodar manualmente
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Buscar token Strava
+        id: token
+        run: |
+          RESPONSE=$(curl -s -X POST https://www.strava.com/oauth/token \
+            -d client_id=${{ secrets.STRAVA_CLIENT_ID }} \
+            -d client_secret=${{ secrets.STRAVA_CLIENT_SECRET }} \
+            -d grant_type=refresh_token \
+            -d refresh_token=${{ secrets.STRAVA_REFRESH_TOKEN }})
+          echo "access_token=$(echo $RESPONSE | python3 -c "import sys,json; print(json.load(sys.stdin)['access_token'])")" >> $GITHUB_OUTPUT
+
+      - name: Buscar dados do clube
+        run: |
+          CLUB_ID=${{ secrets.STRAVA_CLUB_ID }}
+          TOKEN=${{ steps.token.outputs.access_token }}
+
+          # Stats do clube
+          STATS=$(curl -s -H "Authorization: Bearer $TOKEN" \
+            "https://www.strava.com/api/v3/clubs/$CLUB_ID")
+
+          MEMBERS=$(echo $STATS | python3 -c "import sys,json; d=json.load(sys.stdin); print(str(d.get('member_count','—'))+'+')")
+
+          # Atividades recentes para calcular KM e corridas
+          ACTIVITIES=$(curl -s -H "Authorization: Bearer $TOKEN" \
+            "https://www.strava.com/api/v3/clubs/$CLUB_ID/activities?per_page=200")
+
+          python3 - <<'EOF'
+          import json, sys
+
+          with open('/dev/stdin') as f:
+              pass
+
+          import subprocess, os
+
+          members_raw = subprocess.check_output(
+            ['bash', '-c', f'echo "$STATS"'],
+            env={**os.environ}
+          )
+
+          EOF
+
+          # Salvar JSON com os valores
+          python3 -c "
+          import json, os, subprocess
+
+          # Ler stats do clube
+          stats_raw = '''$STATS'''
+          acts_raw = '''$ACTIVITIES'''
+
+          try:
+              stats = json.loads(stats_raw)
+              members = stats.get('member_count', 0)
+          except:
+              members = 0
+
+          try:
+              acts = json.loads(acts_raw)
+              total_km = sum(a.get('distance', 0) for a in acts if a.get('type') == 'Run') / 1000
+              total_runs = sum(1 for a in acts if a.get('type') == 'Run')
+          except:
+              total_km = 0
+              total_runs = 0
+
+          data = {
+              'members': str(members) + ('+' if members > 0 else ''),
+              'km': str(round(total_km)) + '+' if total_km > 0 else '5K+',
+              'runs': str(total_runs) + '+' if total_runs > 0 else '80+',
+              'updated': '$(date -u +%Y-%m-%d)'
+          }
+
+          with open('assets/data/strava.json', 'w') as f:
+              json.dump(data, f, indent=2)
+          print('Stats atualizados:', data)
+          "
+
+      - name: Commit e push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/data/strava.json
+          git diff --staged --quiet || git commit -m "chore: atualiza stats Strava [skip ci]"
+          git push
