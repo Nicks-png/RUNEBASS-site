@@ -142,6 +142,14 @@ footer{background:#030303;padding:48px 22px 28px;border-top:1px solid rgba(201,1
 .shold{font-size:.62rem;color:rgba(240,237,230,.3);text-decoration:line-through;margin-left:7px;font-weight:400}
 .shop-cta{display:block;text-align:center;margin-top:28px;padding:14px 24px;border:1px solid #C9A84C;color:#C9A84C;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s}
 .shop-cta:hover{background:#C9A84C;color:#030303}
+/* ===== SPOTIFY PLAYER FLUTUANTE ===== */
+#sp-btn{position:fixed;bottom:24px;right:20px;z-index:9999;width:52px;height:52px;border-radius:50%;background:#1DB954;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(29,185,84,.4);transition:transform .2s,box-shadow .2s}
+#sp-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(29,185,84,.55)}
+#sp-btn svg{width:26px;height:26px;fill:#fff}
+#sp-panel{position:fixed;bottom:86px;right:20px;z-index:9998;width:320px;background:#111;border:1px solid #222;border-radius:12px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.7);transform:translateY(12px) scale(.97);opacity:0;pointer-events:none;transition:transform .25s ease,opacity .25s ease}
+#sp-panel.open{transform:translateY(0) scale(1);opacity:1;pointer-events:all}
+#sp-panel iframe{display:block;border:0;width:100%}
+@media(max-width:400px){#sp-panel{width:calc(100vw - 32px);right:16px}#sp-btn{right:16px}}
 /* ===== FAQ ACORDEÃO ===== */
 .faq-list{display:flex;flex-direction:column;gap:2px;margin-top:28px}
 .faq-item{background:#0a0a0a;border:1px solid rgba(255,255,255,.05);border-left:3px solid transparent;overflow:hidden;transition:border-color .2s}
@@ -638,6 +646,14 @@ section[id]{scroll-margin-top:64px}
   <div class="fbot"><p class="fcpy">© 2025 <span>Run & Bass Club</span>. Todos os direitos reservados.</p></div>
 </footer>
 
+<!-- SPOTIFY PLAYER FLUTUANTE -->
+<button id="sp-btn" onclick="togglePlayer()" title="Playlist Run &amp; Bass">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+</button>
+<div id="sp-panel">
+  <iframe src="https://open.spotify.com/embed/playlist/3bucaISs7kR7JVYg2J4XiB?utm_source=generator&theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
 <script>
 var menuOpen=false;
 function toggleMenu(){menuOpen=!menuOpen;document.getElementById('drawer').classList.toggle('open',menuOpen);document.getElementById('b1').style.transform=menuOpen?'rotate(45deg) translate(4px,4px)':'';document.getElementById('b2').style.opacity=menuOpen?'0':'1';document.getElementById('b3').style.transform=menuOpen?'rotate(-45deg) translate(4px,-4px)':'';}  
@@ -645,6 +661,7 @@ function closeMenu(){menuOpen=false;document.getElementById('drawer').classList.
 document.querySelectorAll('#drawer a[href^="#"]').forEach(function(a){a.addEventListener('click',closeMenu);});
 window.addEventListener('scroll',function(){var d=document.documentElement;var p=document.getElementById('pbar');if(p)p.style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';});
 var sections=['home','sobre','eventos','djs','galeria','membros','duvidas','loja'];
+function togglePlayer(){document.getElementById('sp-panel').classList.toggle('open');}
 function toggleFaq(btn){var item=btn.closest('.faq-item');var open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!open)item.classList.add('open');}
 var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var id=e.target.id;document.querySelectorAll('.desk-nav a, #drawer a').forEach(function(a){var h=a.getAttribute('href');a.classList.toggle('active',h==='#'+id||(id==='home'&&h==='index.html'));});}});},{threshold:0.3,rootMargin:'-80px 0px -40% 0px'});
 sections.forEach(function(id){var el=document.getElementById(id);if(el)observer.observe(el);});
