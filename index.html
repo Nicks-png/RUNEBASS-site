@@ -670,9 +670,26 @@ function toggleFaq(btn){var item=btn.closest('.faq-item');var open=item.classLis
 var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var id=e.target.id;document.querySelectorAll('.desk-nav a, #drawer a').forEach(function(a){var h=a.getAttribute('href');a.classList.toggle('active',h==='#'+id||(id==='home'&&h==='index.html'));});}});},{threshold:0.3,rootMargin:'-80px 0px -40% 0px'});
 sections.forEach(function(id){var el=document.getElementById(id);if(el)observer.observe(el);});
 // Scroll reveal
-var rvEls=document.querySelectorAll('section h2,section h3,section .lbl,section .desc,section .pil,.evc,.dj-card,.gi,.shcard,.faq-item,.plan,.spons-card,.ql,.aniv-strip,.ig-cta,.shop-cta,section p.desc,section .sobre-img,section .dj-stage-img');
-rvEls.forEach(function(el,i){el.classList.add('rv');el.style.transitionDelay=(i%6)*0.06+'s';});
-var rvObs=new IntersectionObserver(function(entries){entries.forEach(function(e){var el=e.target;if(e.isIntersecting){el.classList.add('show');el.classList.remove('above');}else{var above=e.boundingClientRect.top<0;if(above){el.classList.add('above');el.classList.remove('show');}else{el.classList.remove('show','above');}}});},{threshold:0.12});
+var rvSel='section h2,section h3,section .lbl,section .desc,section .pil,.evc,.dj-card,.gi,.shcard,.faq-item,.plan,.spons-card,.ql,.aniv-strip,.ig-cta,.shop-cta,section .sobre-img,section .dj-stage-img';
+var rvEls=document.querySelectorAll(rvSel);
+rvEls.forEach(function(el){el.classList.add('rv');});
+var rvObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    var el=e.target;
+    var above=e.boundingClientRect.top<0;
+    if(e.isIntersecting){
+      // calcular delay baseado em irmãos visíveis no mesmo parent
+      var siblings=Array.from(el.parentElement.querySelectorAll('.rv'));
+      var idx=siblings.indexOf(el);
+      el.style.transitionDelay=(idx%5)*0.07+'s';
+      el.classList.add('show');el.classList.remove('above');
+    }else{
+      el.style.transitionDelay='0s';
+      if(above){el.classList.add('above');el.classList.remove('show');}
+      else{el.classList.remove('show','above');}
+    }
+  });
+},{threshold:0.1});
 rvEls.forEach(function(el){rvObs.observe(el);});
 </script>
 </body>
