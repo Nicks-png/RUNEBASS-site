@@ -129,6 +129,23 @@ footer{background:#030303;padding:48px 22px 28px;border-top:1px solid rgba(201,1
 .plfeats li::before{content:'→';color:#C9A84C;font-size:.58rem;flex-shrink:0}
 .plcta{display:block;width:100%;margin-top:22px;padding:12px;text-align:center;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;background:transparent;border:1px solid rgba(201,168,76,.28);color:#F0EDE6;cursor:pointer;text-decoration:none}
 .plan.ft .plcta{background:#C9A84C;border-color:#C9A84C;color:#030303;font-weight:700}
+/* ===== LOJA SECTION ===== */
+.shopg{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:28px}
+.shcard{background:#0a0a0a;border:1px solid rgba(201,168,76,.06);position:relative;overflow:hidden}
+.shimg-real{position:relative;overflow:hidden;background:#111}
+.shimg-real img{width:100%;height:auto;display:block;filter:brightness(.9)}
+.sbadge{position:absolute;top:10px;left:0;background:#C9A84C;color:#030303;font-size:.42rem;letter-spacing:.14em;padding:4px 10px;font-weight:700;text-transform:uppercase;z-index:1}
+.sbadge.esg{background:#1a1a1a;color:rgba(240,237,230,.5)}
+.shbody{padding:14px 14px 18px}
+.shname{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:#F0EDE6;line-height:1.3;margin-bottom:8px}
+.shprice{font-size:1rem;font-weight:900;color:#C9A84C}
+.shold{font-size:.62rem;color:rgba(240,237,230,.3);text-decoration:line-through;margin-left:7px;font-weight:400}
+.shop-cta{display:block;text-align:center;margin-top:28px;padding:14px 24px;border:1px solid #C9A84C;color:#C9A84C;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s}
+.shop-cta:hover{background:#C9A84C;color:#030303}
+/* ===== ANIVERSÁRIO ===== */
+.aniv-strip{margin-top:24px;padding:16px 20px;background:linear-gradient(90deg,rgba(201,168,76,.12),rgba(201,168,76,.04));border-left:3px solid #C9A84C;border-right:1px solid rgba(201,168,76,.15)}
+.aniv-strip .aniv-num{font-size:2.2rem;font-weight:900;color:#C9A84C;line-height:1}
+.aniv-strip .aniv-txt{font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,237,230,.55);margin-top:3px}
 /* ===== RESPONSIVE / DESKTOP LAYOUT ===== */
 .desk-nav{display:none}
 
@@ -335,11 +352,11 @@ section[id]{scroll-margin-top:64px}
 
 <nav>
   <a href="index.html"><img src="assets/img/logo.jpg" class="logo-img" alt="Run & Bass"></a>
-  <div class="desk-nav"><a href="#sobre">Sobre</a><a href="#eventos">Eventos</a><a href="#djs">DJs</a><a href="#galeria">Galeria</a><a href="loja.html">Loja</a><a href="#membros" class="cta">Seja Membro</a></div>
+  <div class="desk-nav"><a href="#sobre">Sobre</a><a href="#eventos">Eventos</a><a href="#djs">DJs</a><a href="#galeria">Galeria</a><a href="#membros">Membros</a><a href="#loja" class="cta">Loja</a></div>
   <button class="menu-btn" onclick="toggleMenu()" id="mbtn"><i id="b1"></i><i id="b2"></i><i id="b3"></i></button>
 </nav>
 
-<div id="drawer"><a href="#home" onclick="closeMenu()" class="active">Home</a><a href="#sobre" onclick="closeMenu()">Sobre</a><a href="#eventos" onclick="closeMenu()">Eventos</a><a href="#djs" onclick="closeMenu()">DJs</a><a href="#galeria" onclick="closeMenu()">Galeria</a><a href="loja.html" onclick="closeMenu()">Loja</a><a href="#membros" onclick="closeMenu()">Membros</a><a href="#membros" onclick="closeMenu()" class="cta">Seja Membro</a></div>
+<div id="drawer"><a href="#home" onclick="closeMenu()" class="active">Home</a><a href="#sobre" onclick="closeMenu()">Sobre</a><a href="#eventos" onclick="closeMenu()">Eventos</a><a href="#djs" onclick="closeMenu()">DJs</a><a href="#galeria" onclick="closeMenu()">Galeria</a><a href="#membros" onclick="closeMenu()">Membros</a><a href="#loja" onclick="closeMenu()">Loja</a><a href="#loja" onclick="closeMenu()" class="cta">Ver Loja</a></div>
 
 <section id="home">
   <img src="assets/img/hero-bg.jpg" alt="" class="hero-art">
@@ -507,6 +524,40 @@ section[id]{scroll-margin-top:64px}
 
 </section>
 
+<section id="loja">
+<div class="sec">
+  <p class="lbl">Loja Oficial</p>
+  <h2>WEAR THE<br><span class="ol2">MOVEMENT</span></h2>
+  <div class="aniv-strip">
+    <div class="aniv-num">1 ANO</div>
+    <div class="aniv-txt">Run &amp; Bass celebra 1 ano de movimento, corrida e música — obrigado a cada membro desta tribo.</div>
+  </div>
+  <div class="shopg">
+    <div class="shcard">
+      <div class="shimg-real"><span class="sbadge">Novo</span><img src="assets/img/produto-1.jpg" alt="Regata Boxy Tee II"></div>
+      <div class="shbody"><div class="shname">Regata Boxy Tee II – Running On The Beat</div><div class="shprice">R$149,90</div></div>
+    </div>
+    <div class="shcard">
+      <div class="shimg-real"><img src="assets/img/produto-2.jpg" alt="Boxy Tee II"></div>
+      <div class="shbody"><div class="shname">Boxy Tee II – Running On The Beat</div><div class="shprice">R$149,90</div></div>
+    </div>
+    <div class="shcard">
+      <div class="shimg-real"><img src="assets/img/produto-3.jpg" alt="Boné Corre e Dança"></div>
+      <div class="shbody"><div class="shname">Boné Corre e Dança – Running On The Beat</div><div class="shprice">R$179,90</div></div>
+    </div>
+    <div class="shcard">
+      <div class="shimg-real"><span class="sbadge esg">Esgotado</span><img src="assets/img/produto-4.jpg" alt="Regata Boxy Tee"></div>
+      <div class="shbody"><div class="shname">Regata Boxy Tee – Running On The Beat</div><div class="shprice">R$119,90<span class="shold">R$129,90</span></div></div>
+    </div>
+    <div class="shcard">
+      <div class="shimg-real"><span class="sbadge esg">Esgotado</span><img src="assets/img/produto-5.jpg" alt="Boxy Tee"></div>
+      <div class="shbody"><div class="shname">Boxy Tee – Running On The Beat</div><div class="shprice">R$119,90<span class="shold">R$129,90</span></div></div>
+    </div>
+  </div>
+  <a href="loja.html" class="shop-cta">Ver Loja Completa</a>
+</div>
+</section>
+
 <footer>
   <img src="assets/img/footer-logo.jpg" class="flogo-img" alt="Run & Bass">
   <div class="ftag">Run the Beat, Feel the Bass!</div>
@@ -537,7 +588,7 @@ function toggleMenu(){menuOpen=!menuOpen;document.getElementById('drawer').class
 function closeMenu(){menuOpen=false;document.getElementById('drawer').classList.remove('open');document.getElementById('b1').style.transform='';document.getElementById('b2').style.opacity='1';document.getElementById('b3').style.transform='';}
 document.querySelectorAll('#drawer a[href^="#"]').forEach(function(a){a.addEventListener('click',closeMenu);});
 window.addEventListener('scroll',function(){var d=document.documentElement;var p=document.getElementById('pbar');if(p)p.style.width=(d.scrollTop/(d.scrollHeight-d.clientHeight)*100)+'%';});
-var sections=['home','sobre','eventos','djs','galeria','membros'];
+var sections=['home','sobre','eventos','djs','galeria','membros','loja'];
 var observer=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var id=e.target.id;document.querySelectorAll('.desk-nav a, #drawer a').forEach(function(a){var h=a.getAttribute('href');a.classList.toggle('active',h==='#'+id||(id==='home'&&h==='index.html'));});}});},{threshold:0.3,rootMargin:'-80px 0px -40% 0px'});
 sections.forEach(function(id){var el=document.getElementById(id);if(el)observer.observe(el);});
 </script>
