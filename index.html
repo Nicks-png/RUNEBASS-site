@@ -143,9 +143,9 @@ footer{background:#030303;padding:48px 22px 28px;border-top:1px solid rgba(201,1
 .shop-cta{display:block;text-align:center;margin-top:28px;padding:14px 24px;border:1px solid #C9A84C;color:#C9A84C;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s}
 .shop-cta:hover{background:#C9A84C;color:#030303}
 /* ===== SCROLL REVEAL ===== */
-.rv{opacity:0;transform:translateY(32px);transition:opacity .55s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);will-change:opacity,transform}
 .rv.show{opacity:1;transform:translateY(0)}
-.rv.above{opacity:0;transform:translateY(-22px)}
+.rv.above{opacity:0;transform:translateY(-16px);transition:opacity .35s ease,transform .35s ease}
 /* ===== SPOTIFY PLAYER FLUTUANTE ===== */
 #sp-btn{position:fixed;bottom:24px;right:20px;z-index:9999;width:52px;height:52px;border-radius:50%;background:#1DB954;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(29,185,84,.4);transition:transform .2s,box-shadow .2s}
 #sp-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(29,185,84,.55)}
@@ -678,10 +678,9 @@ var rvObs=new IntersectionObserver(function(entries){
     var el=e.target;
     var above=e.boundingClientRect.top<0;
     if(e.isIntersecting){
-      // calcular delay baseado em irmãos visíveis no mesmo parent
       var siblings=Array.from(el.parentElement.querySelectorAll('.rv'));
       var idx=siblings.indexOf(el);
-      el.style.transitionDelay=(idx%5)*0.07+'s';
+      el.style.transitionDelay=(idx%6)*0.08+'s';
       el.classList.add('show');el.classList.remove('above');
     }else{
       el.style.transitionDelay='0s';
@@ -689,7 +688,7 @@ var rvObs=new IntersectionObserver(function(entries){
       else{el.classList.remove('show','above');}
     }
   });
-},{threshold:0.1});
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
 rvEls.forEach(function(el){rvObs.observe(el);});
 </script>
 </body>
