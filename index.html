@@ -184,9 +184,9 @@ footer{background:#030303;padding:48px 22px 28px;border-top:1px solid rgba(201,1
 .faq-ans-inner strong{color:#F0EDE6}
 /* ===== ANIVERSÁRIO — LINHA DE CHEGADA ===== */
 .aniv-strip{margin-top:24px;position:relative;overflow:hidden;background:#080808;border:1px solid rgba(255,255,255,.06)}
-.aniv-tape{height:20px;background:repeating-conic-gradient(#1c1c1c 0% 25%,#e0e0e0 0% 50%) 0 0/20px 20px;opacity:.85}
+@keyframes tape-scroll{to{background-position:40px 0}}
+.aniv-tape{height:20px;background:repeating-conic-gradient(#1c1c1c 0% 25%,#e0e0e0 0% 50%) 0 0/20px 20px;opacity:.85;animation:tape-scroll 1s linear infinite}
 .aniv-inner{padding:22px 20px 24px;position:relative;background:linear-gradient(90deg,rgba(201,168,76,.07),rgba(201,168,76,.01))}
-.aniv-inner::after{content:'FINISH';position:absolute;right:-8px;top:50%;transform:translateY(-50%) rotate(90deg);font-size:5rem;font-weight:900;letter-spacing:.25em;color:rgba(255,255,255,.025);pointer-events:none;white-space:nowrap}
 .aniv-strip .aniv-num{font-size:2.4rem;font-weight:900;color:#C9A84C;line-height:1;display:flex;align-items:center;gap:12px}
 .aniv-strip .aniv-num::before{content:'';display:block;width:3px;height:2.2rem;background:#C9A84C;flex-shrink:0}
 .aniv-strip .aniv-txt{font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,237,230,.5);margin-top:10px;line-height:1.7;padding-left:15px}
