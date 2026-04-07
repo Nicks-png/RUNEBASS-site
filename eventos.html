@@ -139,6 +139,16 @@ footer{border-top:1px solid #1A1A1A!important}
 .plfeats li{color:#888!important}
 .plcta{border:1px solid #2E2E2E!important;color:#CCC!important}
 
+/* Desktop nav */
+.desk-nav{display:none}
+@media(min-width:960px){nav{padding:14px 60px}.menu-btn{display:none}.desk-nav{display:flex;align-items:center;gap:26px}.desk-nav a{font-size:.63rem;letter-spacing:.16em;text-decoration:none;text-transform:uppercase;font-weight:700;transition:color .2s}.desk-nav .cta{padding:9px 22px;font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;text-decoration:none}.desk-nav .cta:hover{opacity:.85}}
+/* Bottom tab bar */
+#tabnav{position:fixed;bottom:0;left:0;right:0;z-index:85;background:#000;border-top:1px solid #1A1A1A;display:grid;grid-template-columns:repeat(5,1fr);height:56px;padding-bottom:env(safe-area-inset-bottom)}
+#tabnav a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;text-decoration:none;color:#444;font-size:.38rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;transition:color .2s}
+#tabnav a.active,#tabnav a:active{color:#C9A84C}
+#tabnav a svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:959px){body{padding-bottom:56px}}
+@media(min-width:960px){#tabnav{display:none}}
 /* Desktop nav (index) */
 .desk-nav a{color:#777!important}
 .desk-nav a:hover,.desk-nav a.active{color:#C9A84C!important}
@@ -151,6 +161,7 @@ footer{border-top:1px solid #1A1A1A!important}
 <div id="pbar"></div>
 <nav>
   <a href="index.html"><img src="assets/img/footer-logo.jpg" class="logo-img" alt="Run & Bass"></a>
+  <div class="desk-nav"><a href="sobre.html">Sobre</a><a href="eventos.html" class="active">Eventos</a><a href="djs.html">DJs</a><a href="galeria.html">Galeria</a><a href="loja.html">Loja</a><a href="membros.html" class="cta">Membros</a></div>
   <button class="menu-btn" onclick="toggleMenu()" id="mbtn"><i id="b1"></i><i id="b2"></i><i id="b3"></i></button>
 </nav>
 <div id="drawer"><a href="index.html" onclick="closeMenu()" class="">Home</a><a href="sobre.html" onclick="closeMenu()" class="">Sobre</a><a href="eventos.html" onclick="closeMenu()" class="active">Eventos</a><a href="djs.html" onclick="closeMenu()" class="">DJs</a><a href="galeria.html" onclick="closeMenu()" class="">Galeria</a><a href="loja.html" onclick="closeMenu()" class="">Loja</a><a href="membros.html" onclick="closeMenu()" class="">Membros</a><a href="membros.html" onclick="closeMenu()" class="cta">Seja Membro</a></div>
@@ -206,6 +217,14 @@ footer{border-top:1px solid #1A1A1A!important}
   </div>
   <div class="fbot"><p class="fcpy">© 2025 <span>Run & Bass Club</span>. Todos os direitos reservados.</p></div>
 </footer>
+
+<nav id="tabnav">
+  <a href="index.html"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg><span>Home</span></a>
+  <a href="eventos.html" class="active"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Eventos</span></a>
+  <a href="galeria.html"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg><span>Galeria</span></a>
+  <a href="loja.html"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span>Loja</span></a>
+  <a href="membros.html"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><span>Membros</span></a>
+</nav>
 
 <script>
 var menuOpen=false;
