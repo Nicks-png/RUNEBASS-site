@@ -74,7 +74,8 @@ footer{background:#030303;padding:48px 22px 28px;border-top:1px solid rgba(201,1
 .sobre-img{width:50%;border-left:3px solid #C9A84C;filter:brightness(.8) contrast(1.1);margin-top:24px;display:block;margin-left:auto;margin-right:auto}
 .mqc-cols{display:flex;flex-direction:column;gap:8px;margin-top:20px}
 .mqc-col{display:flex;flex-direction:row;gap:8px}
-.mqc-img{flex:1;min-width:0;width:100%;height:auto;display:block;filter:brightness(.85) contrast(1.05)}
+.mqc-item{flex:1;display:flex;justify-content:center;align-items:center}
+.mqc-img{max-height:120px;max-width:100%;width:auto;height:auto;display:block;filter:brightness(.85) contrast(1.05)}
 .pils{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:24px;border:1px solid rgba(201,168,76,.12)}
 .pil{padding:16px 14px;border:1px solid rgba(201,168,76,.07);background:#070707}
 .pico{font-size:1.4rem;margin-bottom:5px}
@@ -444,14 +445,14 @@ section[id]{scroll-margin-top:64px}
   <p class="desc" style="margin-top:12px">Unimos som, suor, estilo e significado. A moda que integramos não é decoração — é atitude em movimento. A Run & Bass é um ecossistema vivo: onde o esporte encontra a arte, a moda se funde ao lifestyle e o individual se conecta ao coletivo.</p>
   <div class="mqc-cols">
     <div class="mqc-col">
-      <img src="assets/img/sobre-img.jpg" alt="" class="mqc-img">
-      <img src="assets/img/mqc-1.png" alt="" class="mqc-img">
-      <img src="assets/img/mqc-2.png" alt="" class="mqc-img">
+      <div class="mqc-item"><img src="assets/img/sobre-img.jpg" alt="" class="mqc-img"></div>
+      <div class="mqc-item"><img src="assets/img/mqc-1.png" alt="" class="mqc-img"></div>
+      <div class="mqc-item"><img src="assets/img/mqc-2.png" alt="" class="mqc-img"></div>
     </div>
     <div class="mqc-col">
-      <img src="assets/img/mqc-3.png" alt="" class="mqc-img">
-      <img src="assets/img/mqc-4.png" alt="" class="mqc-img">
-      <img src="assets/img/mqc-5.png" alt="" class="mqc-img">
+      <div class="mqc-item"><img src="assets/img/mqc-3.png" alt="" class="mqc-img"></div>
+      <div class="mqc-item"><img src="assets/img/mqc-4.png" alt="" class="mqc-img"></div>
+      <div class="mqc-item"><img src="assets/img/mqc-5.png" alt="" class="mqc-img"></div>
     </div>
   </div>
 </section>
