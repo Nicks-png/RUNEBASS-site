@@ -35,29 +35,32 @@ footer{background:#030303;padding:48px 22px 28px;border-top:1px solid rgba(201,1
 .ftag{font-size:.48rem;letter-spacing:.14em;color:#C9A84C;text-transform:uppercase;margin-bottom:10px}
 .fdesc{font-size:.75rem;color:rgba(240,237,230,.35);line-height:1.7;margin-bottom:18px}
 .fsoc{display:flex;gap:8px;margin-bottom:28px}
-.fsi{width:30px;height:30px;border:1px solid rgba(201,168,76,.25);display:flex;align-items:center;justify-content:center;font-size:.54rem;color:rgba(240,237,230,.4);text-decoration:none}
+.fsi{width:30px;height:30px;min-width:44px;min-height:44px;border:1px solid rgba(201,168,76,.25);display:inline-flex;align-items:center;justify-content:center;font-size:.54rem;color:rgba(240,237,230,.4);text-decoration:none}
 .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
 .fct{font-size:.48rem;letter-spacing:.18em;color:#F0EDE6;text-transform:uppercase;margin-bottom:8px}
 .fli{list-style:none;display:flex;flex-direction:column;gap:6px}
-.fli a{font-size:.75rem;color:rgba(240,237,230,.35);text-decoration:none}
+.fli a{font-size:.8rem;color:rgba(240,237,230,.35);text-decoration:none}
 .fbot{border-top:1px solid rgba(255,255,255,.04);padding-top:16px}
 .fcpy{font-size:.46rem;letter-spacing:.08em;color:rgba(240,237,230,.18)}
 .fcpy span{color:#C9A84C}
 
-.page-top{padding:100px 22px 40px;background:#030303}
-.djs-hero{position:relative;margin-top:28px;overflow:hidden;height:min(55vh,400px)}
-.djs-hero img{width:100%;height:100%;display:block;object-fit:cover;object-position:center top;filter:brightness(.75) contrast(1.1)}
-.djs-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,#030303 100%)}
+.page-top{padding:100px 22px 16px;background:#030303}
+.djs-hero-img{margin-top:28px;overflow:hidden}
+.djs-hero-img img{width:100%;display:block;filter:brightness(.75) contrast(1.1)}
+
+
+
+
 .dj-list{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:4px}
-.dj-card{position:relative;overflow:hidden;background:#080808;height:260px}
-.dj-card:first-child{grid-column:1/-1;height:340px}
-.dj-card img{width:100%;height:100%;display:block;object-fit:cover;filter:brightness(.8) contrast(1.1)}
+.dj-card{position:relative;overflow:hidden;background:#080808;height:320px}
+
+.dj-card img{width:100%;max-width:100%;height:100%;display:block;object-fit:cover;filter:brightness(.8) contrast(1.1)}
 .dj-card-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(3,3,3,.92) 75%,#030303 100%)}
 .dj-card-body{position:absolute;bottom:0;left:0;right:0;padding:20px 20px 28px}
 .dj-name{font-size:2.2rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:#F0EDE6;line-height:1}
 .dj-genre{font-size:.52rem;letter-spacing:.2em;color:#C9A84C;text-transform:uppercase;margin-top:4px;margin-bottom:8px}
 .dj-bio{font-size:.78rem;color:rgba(240,237,230,.6);line-height:1.65}
-.dj-stage-img{width:100%;display:block;filter:brightness(.75) contrast(1.1);margin-top:2px}
+.dj-stage-img{width:100%;max-width:100%;display:block;filter:brightness(.75) contrast(1.1);margin-top:2px}
 
 /* ===== URBAN STREET PALETTE — B&W + GOLD ===== */
 body{color:#F2F2F2}
@@ -121,7 +124,7 @@ footer{border-top:1px solid #1A1A1A!important}
 .dj-card-overlay{background:linear-gradient(to bottom,transparent 30%,rgba(0,0,0,.92) 75%,#000 100%)!important}
 .dj-name{color:#F2F2F2!important}
 .dj-bio{color:#888!important}
-.djs-hero-overlay{background:linear-gradient(to bottom,transparent 50%,#000 100%)!important}
+
 
 /* Loja */
 .shcard{background:#0C0C0C!important;border:1px solid #1C1C1C!important}
@@ -149,12 +152,76 @@ footer{border-top:1px solid #1A1A1A!important}
 #tabnav a.active,#tabnav a:active{color:#C9A84C}
 #tabnav a svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:959px){body{padding-bottom:56px}}
-@media(min-width:960px){#tabnav{display:none}}
+@media(max-width:500px){.dj-list{grid-template-columns:1fr}}@media(min-width:1280px){.dj-list{grid-template-columns:1fr 1fr 1fr}.dj-card{height:360px}}@media(min-width:960px){#tabnav{display:none}}
 /* Desktop nav (index) */
 .desk-nav a{color:#777!important}
 .desk-nav a:hover,.desk-nav a.active{color:#C9A84C!important}
 .desk-nav .cta{background:#C9A84C!important;color:#000!important}
 /* ===== END URBAN PALETTE ===== */
+/* ===== HOVER ANIMATIONS ===== */
+/* Zoom em imagens */
+.dj-card,.dj-teaser-card,.gi,.gal-teaser-item,.loja-teaser-img,.shimg-real,.ev-teaser-thumb{overflow:hidden}
+.dj-card img,.dj-teaser-card img,.gi img,.gal-teaser-item img,.loja-teaser-img img,.shimg-real img,.ev-teaser-thumb img,.dj-stage-img{transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
+.dj-card:hover img,.dj-teaser-card:hover img,.gi:hover img,.gal-teaser-item:hover img,.loja-teaser-card:hover .loja-teaser-img img,.shcard:hover .shimg-real img{transform:scale(1.07)}
+.ev-teaser-card:hover .ev-teaser-thumb img{transform:scale(1.1)}
+
+/* Botao dourado */
+.btn-g{transition:background .2s,transform .15s,box-shadow .2s}
+.btn-g:hover{background:#b8943e;transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,.35)}
+.btn-g:active{transform:translateY(0);box-shadow:none}
+
+/* Botao outline */
+.btn-o{transition:border-color .2s,color .2s,transform .15s}
+.btn-o:hover{border-color:rgba(240,237,230,.6);transform:translateY(-2px)}
+.btn-o:active{transform:translateY(0)}
+
+/* CTA nav desktop */
+.desk-nav .cta{transition:background .2s,transform .15s}
+.desk-nav .cta:hover{background:#b8943e;transform:translateY(-1px)}
+
+/* Link teaser */
+.t-link{transition:letter-spacing .25s,opacity .2s}
+.t-link:hover{letter-spacing:.28em;opacity:.8}
+
+/* Cards de evento */
+.ev-teaser-card{transition:border-left-color .2s,transform .2s}
+.ev-teaser-card:hover{transform:translateX(4px)}
+.evc{transition:border-left-color .2s,transform .2s}
+.evc:hover{transform:translateX(4px)}
+
+/* Quick links */
+.ql{transition:border-left-color .2s,background .2s,transform .15s}
+.ql:hover{transform:translateY(-2px)}
+
+/* Cards de plano */
+.plan,.plan-teaser{transition:transform .2s,border-color .2s,box-shadow .2s}
+.plan:hover,.plan-teaser:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+
+/* Cards de loja */
+.shcard,.loja-teaser-card{transition:border-color .2s,transform .2s}
+.shcard:hover,.loja-teaser-card:hover{border-color:rgba(201,168,76,.25);transform:translateY(-3px)}
+
+/* Botao adicionar */
+.shadd{transition:background .2s,color .2s,border-color .2s}
+.shadd:hover{background:rgba(201,168,76,.1);border-color:#C9A84C;color:#C9A84C}
+
+/* Sponsors e sobre pills */
+.spons-card{transition:border-left-color .2s,transform .15s}
+.spons-card:hover{transform:translateX(3px)}
+.sobre-pill{transition:border-color .2s,background .2s}
+.sobre-pill:hover{border-color:rgba(201,168,76,.2);background:rgba(201,168,76,.04)}
+
+/* DJ card lift */
+.dj-card{transition:transform .25s}
+.dj-card:hover{transform:scale(1.01)}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .btn-g,.btn-o,.desk-nav .cta,.t-link,.ev-teaser-card,.evc,.ql,.plan,.plan-teaser,.shcard,.loja-teaser-card,.shadd,.spons-card,.sobre-pill,.dj-card{transition:none!important;transform:none!important;box-shadow:none!important}
+  .dj-card img,.dj-teaser-card img,.gi img,.gal-teaser-item img,.loja-teaser-img img,.shimg-real img,.ev-teaser-thumb img,.dj-stage-img{transition:none!important;transform:none!important}
+}
+/* ===== END HOVER ANIMATIONS ===== */
+
 </style>
 </head>
 <body>
@@ -171,9 +238,8 @@ footer{border-top:1px solid #1A1A1A!important}
 <div class="page-top">
   <p class="lbl">Residentes</p>
   <h2>QUEM SÃO<br><span class="ol2">OS DJS</span></h2>
-  <div class="djs-hero">
-    <img src="assets/img/galeria-6.jpg" alt="Os DJs Run & Bass" class="">
-    <div class="djs-hero-overlay"></div>
+  <div class="djs-hero-img">
+    <img src="assets/img/djs-hero.jpg" alt="Os DJs Run & Bass">
   </div>
 </div>
 <div class="dj-list">
@@ -205,12 +271,21 @@ footer{border-top:1px solid #1A1A1A!important}
     </div>
   </div>
   <div class="dj-card">
-    <img src="assets/img/dj-stage.jpg" alt="Aurino" class="">
+    <img src="assets/img/dj-aurino.jpg" alt="Aurino" class="">
     <div class="dj-card-overlay"></div>
     <div class="dj-card-body">
       <div class="dj-name">AURINO</div>
       <div class="dj-genre">Boombap · Funk · Disco · House · Techno</div>
       <p class="dj-bio">Referências de Hip-Hop, Funk e Dance Music moldaram sua identidade. Traz o swing do Boombap e a energia da Dance Music, transitando entre Funk, Disco, House, Garage e Techno.</p>
+    </div>
+  </div>
+  <div class="dj-card">
+    <img src="assets/img/dj-icaro.jpg" alt="Icaro" class="">
+    <div class="dj-card-overlay"></div>
+    <div class="dj-card-body">
+      <div class="dj-name">ICARO</div>
+      <div class="dj-genre">House &middot; Techno &middot; UK Garage &middot; Trance &middot; Breakbeat</div>
+      <a href="https://instagram.com/icaro.sr" target="_blank" class="dj-ig">@icaro.sr</a>
     </div>
   </div>
 </div>
