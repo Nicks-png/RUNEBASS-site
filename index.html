@@ -403,13 +403,14 @@ section[id]{scroll-margin-top:64px}
 .t-link{font-size:.56rem;letter-spacing:.2em;color:#C9A84C;text-transform:uppercase;text-decoration:none;white-space:nowrap;flex-shrink:0}
 .t-link:hover{text-decoration:underline}
 .dj-teaser-grid{display:grid;grid-template-columns:1fr 1fr;gap:3px}
-.dj-teaser-card{position:relative;overflow:hidden;background:#080808;height:240px}
-
-.dj-teaser-card img{width:100%;height:100%;object-fit:cover;filter:brightness(.75) contrast(1.1)}
-.dj-teaser-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 15%,rgba(3,3,3,.88) 60%,#030303 100%)}
-.dj-teaser-body{position:absolute;bottom:0;left:0;right:0;padding:14px 18px 20px}
-.dj-teaser-name{font-size:1.5rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#F0EDE6;line-height:1}
-.dj-teaser-genre{font-size:.46rem;letter-spacing:.16em;color:#C9A84C;text-transform:uppercase;margin-top:3px}
+.dj-teaser-card{background:#080808;overflow:hidden;display:flex;flex-direction:column}
+.dj-teaser-img{height:180px;overflow:hidden;flex-shrink:0}
+.dj-teaser-img img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:brightness(.85) contrast(1.1);display:block}
+.dj-teaser-overlay{display:none}
+.dj-teaser-body{padding:12px 14px 16px;background:#080808}
+.dj-teaser-name{font-size:1.1rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;color:#F0EDE6;line-height:1}
+.dj-teaser-genre{font-size:.44rem;letter-spacing:.14em;color:#C9A84C;text-transform:uppercase;margin-top:4px}
+.dj-teaser-bio{font-size:.7rem;color:rgba(240,237,230,.55);line-height:1.5;margin-top:6px}
 .ev-teaser-list{display:flex;flex-direction:column;gap:2px}
 .ev-teaser-card{display:flex;align-items:center;background:#080808;border:1px solid rgba(201,168,76,.08);border-left:3px solid transparent;padding:16px;gap:18px;text-decoration:none;transition:border-color .2s}
 .ev-teaser-card:hover{border-left-color:#C9A84C}
@@ -451,7 +452,7 @@ section[id]{scroll-margin-top:64px}
 @media(min-width:768px){
   .t-sec{padding:72px 40px 64px}
   .dj-teaser-grid{grid-template-columns:1fr 1fr 1fr}
-  .dj-teaser-card{height:280px}
+  .dj-teaser-img{height:200px}
   .ev-teaser-list{display:grid;grid-template-columns:1fr 1fr;gap:2px}
   .gal-teaser-grid{grid-template-columns:1fr 1fr 1fr}
   .gal-teaser-item:first-child{grid-column:span 3;aspect-ratio:21/7}
@@ -461,7 +462,7 @@ section[id]{scroll-margin-top:64px}
 }
 @media(min-width:1280px){
   .t-sec{padding:88px 120px 80px}
-  .dj-teaser-card{height:300px}
+  .dj-teaser-img{height:220px}
 }
 @media(min-width:1600px){
   .t-sec{padding:100px 160px 90px}
@@ -660,29 +661,44 @@ section[id]{scroll-margin-top:64px}
   </div>
   <div class="dj-teaser-grid">
     <div class="dj-teaser-card">
-      <img src="assets/img/dj-1.jpg" alt="PALUDO" class="parallax-img">
-      <div class="dj-teaser-overlay"></div>
-      <div class="dj-teaser-body"><div class="dj-teaser-name">PALUDO</div><div class="dj-teaser-genre">Idealizador &middot; Tech House &middot; Drum &amp; Bass</div></div>
+      <div class="dj-teaser-img"><img src="assets/img/dj-1.jpg" alt="PALUDO"></div>
+      <div class="dj-teaser-body">
+        <div class="dj-teaser-name">PALUDO</div>
+        <div class="dj-teaser-genre">Idealizador &middot; Tech House &middot; Drum &amp; Bass</div>
+        <p class="dj-teaser-bio">Batidas brasileiras com Tech House, Breakbeat e Drum &amp; Bass.</p>
+      </div>
     </div>
     <div class="dj-teaser-card">
-      <img src="assets/img/dj-2.jpg" alt="NICH" class="parallax-img">
-      <div class="dj-teaser-overlay"></div>
-      <div class="dj-teaser-body"><div class="dj-teaser-name">NICH</div><div class="dj-teaser-genre">Hip-Hop &middot; Funk &middot; Eletr&ocirc;nica</div></div>
+      <div class="dj-teaser-img"><img src="assets/img/dj-2.jpg" alt="NICH"></div>
+      <div class="dj-teaser-body">
+        <div class="dj-teaser-name">NICH</div>
+        <div class="dj-teaser-genre">Hip-Hop &middot; Funk &middot; Eletr&ocirc;nica</div>
+        <p class="dj-teaser-bio">Melodias tocantes e vocais cheios da malandragem brasileira.</p>
+      </div>
     </div>
     <div class="dj-teaser-card">
-      <img src="assets/img/dj-3.jpg" alt="MZTT" class="parallax-img">
-      <div class="dj-teaser-overlay"></div>
-      <div class="dj-teaser-body"><div class="dj-teaser-name">MZTT</div><div class="dj-teaser-genre">House &middot; Tech House &middot; Minimal</div></div>
+      <div class="dj-teaser-img"><img src="assets/img/dj-3.jpg" alt="MZTT"></div>
+      <div class="dj-teaser-body">
+        <div class="dj-teaser-name">MZTT</div>
+        <div class="dj-teaser-genre">House &middot; Tech House &middot; Minimal</div>
+        <p class="dj-teaser-bio">House e Minimal com batidas que vão do viajante ao dan&ccedil;ante.</p>
+      </div>
     </div>
     <div class="dj-teaser-card">
-      <img src="assets/img/dj-aurino.jpg" alt="AURINO" class="parallax-img">
-      <div class="dj-teaser-overlay"></div>
-      <div class="dj-teaser-body"><div class="dj-teaser-name">AURINO</div><div class="dj-teaser-genre">Boombap &middot; Funk &middot; Disco &middot; House</div></div>
+      <div class="dj-teaser-img"><img src="assets/img/dj-aurino.jpg" alt="AURINO"></div>
+      <div class="dj-teaser-body">
+        <div class="dj-teaser-name">AURINO</div>
+        <div class="dj-teaser-genre">Boombap &middot; Funk &middot; Disco &middot; House</div>
+        <p class="dj-teaser-bio">Energia do Boombap com grooves de Funk, Disco e House.</p>
+      </div>
     </div>
     <div class="dj-teaser-card">
-      <img src="assets/img/dj-icaro.jpg" alt="ICARO" class="parallax-img">
-      <div class="dj-teaser-overlay"></div>
-      <div class="dj-teaser-body"><div class="dj-teaser-name">ICARO</div><div class="dj-teaser-genre">Hip-Hop &middot; Trap &middot; Eletr&ocirc;nica</div></div>
+      <div class="dj-teaser-img"><img src="assets/img/dj-icaro.jpg" alt="ICARO"></div>
+      <div class="dj-teaser-body">
+        <div class="dj-teaser-name">ICARO</div>
+        <div class="dj-teaser-genre">Hip-Hop &middot; Trap &middot; Eletr&ocirc;nica</div>
+        <p class="dj-teaser-bio">Sets imprevis&iacute;veis entre Hip-Hop, Trap e eletr&ocirc;nica.</p>
+      </div>
     </div>
   </div>
 </div>
