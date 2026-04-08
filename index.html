@@ -472,6 +472,70 @@ section[id]{scroll-margin-top:64px}
 .ev-teaser-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.85) contrast(1.1)}
 @media(min-width:768px){.ev-teaser-thumb{width:96px;height:96px}}
 
+/* ===== HOVER ANIMATIONS ===== */
+/* Zoom em imagens */
+.dj-card,.dj-teaser-card,.gi,.gal-teaser-item,.loja-teaser-img,.shimg-real,.ev-teaser-thumb{overflow:hidden}
+.dj-card img,.dj-teaser-card img,.gi img,.gal-teaser-item img,.loja-teaser-img img,.shimg-real img,.ev-teaser-thumb img,.dj-stage-img{transition:transform .5s cubic-bezier(.25,.46,.45,.94)}
+.dj-card:hover img,.dj-teaser-card:hover img,.gi:hover img,.gal-teaser-item:hover img,.loja-teaser-card:hover .loja-teaser-img img,.shcard:hover .shimg-real img{transform:scale(1.07)}
+.ev-teaser-card:hover .ev-teaser-thumb img{transform:scale(1.1)}
+
+/* Botao dourado */
+.btn-g{transition:background .2s,transform .15s,box-shadow .2s}
+.btn-g:hover{background:#b8943e;transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,.35)}
+.btn-g:active{transform:translateY(0);box-shadow:none}
+
+/* Botao outline */
+.btn-o{transition:border-color .2s,color .2s,transform .15s}
+.btn-o:hover{border-color:rgba(240,237,230,.6);transform:translateY(-2px)}
+.btn-o:active{transform:translateY(0)}
+
+/* CTA nav desktop */
+.desk-nav .cta{transition:background .2s,transform .15s}
+.desk-nav .cta:hover{background:#b8943e;transform:translateY(-1px)}
+
+/* Link teaser */
+.t-link{transition:letter-spacing .25s,opacity .2s}
+.t-link:hover{letter-spacing:.28em;opacity:.8}
+
+/* Cards de evento */
+.ev-teaser-card{transition:border-left-color .2s,transform .2s}
+.ev-teaser-card:hover{transform:translateX(4px)}
+.evc{transition:border-left-color .2s,transform .2s}
+.evc:hover{transform:translateX(4px)}
+
+/* Quick links */
+.ql{transition:border-left-color .2s,background .2s,transform .15s}
+.ql:hover{transform:translateY(-2px)}
+
+/* Cards de plano */
+.plan,.plan-teaser{transition:transform .2s,border-color .2s,box-shadow .2s}
+.plan:hover,.plan-teaser:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+
+/* Cards de loja */
+.shcard,.loja-teaser-card{transition:border-color .2s,transform .2s}
+.shcard:hover,.loja-teaser-card:hover{border-color:rgba(201,168,76,.25);transform:translateY(-3px)}
+
+/* Botao adicionar */
+.shadd{transition:background .2s,color .2s,border-color .2s}
+.shadd:hover{background:rgba(201,168,76,.1);border-color:#C9A84C;color:#C9A84C}
+
+/* Sponsors e sobre pills */
+.spons-card{transition:border-left-color .2s,transform .15s}
+.spons-card:hover{transform:translateX(3px)}
+.sobre-pill{transition:border-color .2s,background .2s}
+.sobre-pill:hover{border-color:rgba(201,168,76,.2);background:rgba(201,168,76,.04)}
+
+/* DJ card lift */
+.dj-card{transition:transform .25s}
+.dj-card:hover{transform:scale(1.01)}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  .btn-g,.btn-o,.desk-nav .cta,.t-link,.ev-teaser-card,.evc,.ql,.plan,.plan-teaser,.shcard,.loja-teaser-card,.shadd,.spons-card,.sobre-pill,.dj-card{transition:none!important;transform:none!important;box-shadow:none!important}
+  .dj-card img,.dj-teaser-card img,.gi img,.gal-teaser-item img,.loja-teaser-img img,.shimg-real img,.ev-teaser-thumb img,.dj-stage-img{transition:none!important;transform:none!important}
+}
+/* ===== END HOVER ANIMATIONS ===== */
+
 </style>
 </head>
 <body>
