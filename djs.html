@@ -45,12 +45,15 @@ footer{background:#030303;padding:48px 22px 28px;border-top:1px solid rgba(201,1
 .fcpy span{color:#C9A84C}
 
 .page-top{padding:100px 22px 16px;background:#030303}
+.djs-hero-img{margin-top:28px;overflow:hidden}
+.djs-hero-img img{width:100%;display:block;filter:brightness(.75) contrast(1.1)}
+
 
 
 
 .dj-list{display:grid;grid-template-columns:1fr 1fr;gap:3px;margin-top:4px}
-.dj-card{position:relative;overflow:hidden;background:#080808;height:260px}
-.dj-card:first-child{grid-column:1/-1;height:340px}
+.dj-card{position:relative;overflow:hidden;background:#080808;height:320px}
+
 .dj-card img{width:100%;max-width:100%;height:100%;display:block;object-fit:cover;filter:brightness(.8) contrast(1.1)}
 .dj-card-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 30%,rgba(3,3,3,.92) 75%,#030303 100%)}
 .dj-card-body{position:absolute;bottom:0;left:0;right:0;padding:20px 20px 28px}
@@ -149,7 +152,7 @@ footer{border-top:1px solid #1A1A1A!important}
 #tabnav a.active,#tabnav a:active{color:#C9A84C}
 #tabnav a svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:959px){body{padding-bottom:56px}}
-@media(max-width:500px){.dj-list{grid-template-columns:1fr}.dj-card:first-child{height:260px}}@media(min-width:1280px){.dj-list{grid-template-columns:1fr 1fr 1fr}.dj-card:first-child{grid-column:1/-1;height:400px}.dj-card{height:320px}}@media(min-width:960px){#tabnav{display:none}}
+@media(max-width:500px){.dj-list{grid-template-columns:1fr}}@media(min-width:1280px){.dj-list{grid-template-columns:1fr 1fr 1fr}.dj-card{height:360px}}@media(min-width:960px){#tabnav{display:none}}
 /* Desktop nav (index) */
 .desk-nav a{color:#777!important}
 .desk-nav a:hover,.desk-nav a.active{color:#C9A84C!important}
@@ -235,6 +238,9 @@ footer{border-top:1px solid #1A1A1A!important}
 <div class="page-top">
   <p class="lbl">Residentes</p>
   <h2>QUEM SÃO<br><span class="ol2">OS DJS</span></h2>
+  <div class="djs-hero-img">
+    <img src="assets/img/djs-hero.jpg" alt="Os DJs Run & Bass">
+  </div>
 </div>
 <div class="dj-list">
   <div class="dj-card">
