@@ -38,7 +38,7 @@ var rvObs=new IntersectionObserver(function(entries){
 rvEls.forEach(function(el){rvObs.observe(el);});
 
 // Reflexo nas letras ol2
-document.querySelectorAll('.ol2').forEach(function(el){el.setAttribute('data-text',el.textContent);});
+document.querySelectorAll('.ol2,.ol2w').forEach(function(el){el.setAttribute('data-text',el.textContent);});
 
 // Paralaxe nas fotos
 var plxEls=document.querySelectorAll('.page-hero img,.djs-hero img,.dj-stage-img');

@@ -25,6 +25,10 @@ h2{line-height:1.15}
 .ol2::after{content:attr(data-text);position:absolute;inset:0;background:linear-gradient(90deg,#030303 0%,#030303 40%,#666 46%,#ccc 50%,#666 54%,#030303 60%,#030303 100%);background-size:200% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:0;animation:ol2-reflect 10s ease-in-out infinite;pointer-events:none;font:inherit;letter-spacing:inherit}
 @keyframes ol2-reflect{0%,20%{background-position:210% 0}80%,100%{background-position:-110% 0}}
 
+/* ol2w — reflexo branco (usado no TRIBE) */
+.ol2w{display:inline-block;position:relative}
+.ol2w::after{content:attr(data-text);position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,transparent 38%,rgba(255,255,255,.3) 46%,rgba(255,255,255,.88) 50%,rgba(255,255,255,.3) 54%,transparent 62%,transparent 100%);background-size:200% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ol2-reflect 10s ease-in-out infinite;pointer-events:none;font:inherit;letter-spacing:inherit}
+
 /* Hero section */
 #home{min-height:100svh;padding:80px 0 0;display:flex;flex-direction:column;position:relative;overflow:hidden;background:#030303}
 .hero-art{width:100%;display:block;object-fit:cover;filter:brightness(.65) contrast(1.1)}
@@ -103,6 +107,21 @@ section[id]{scroll-margin-top:64px}
 /* FAB mobile positioning */
 @media(max-width:959px){#stv-btn{bottom:72px}#sp-btn{bottom:72px}#sp-panel{bottom:134px}}
 
+/* Galeria — 3 vídeos iguais */
+#galeria .ggrid{grid-template-columns:1fr 1fr 1fr}
+#galeria .gi:first-child{grid-column:span 1;aspect-ratio:auto}
+#galeria .gi:first-child video{aspect-ratio:1}
+
+/* Membros responsivo */
+@media(min-width:768px){
+  .membros-inner{padding:90px 60px 60px}
+  .plans{flex-direction:row;gap:28px}
+  .plan{flex:1}
+}
+@media(min-width:960px){
+  .membros-inner{padding:100px 80px 72px}
+}
+
 /* Index responsive breakpoints */
 @media(min-width:768px){
   nav{padding:14px 40px}
@@ -158,9 +177,15 @@ section[id]{scroll-margin-top:64px}
 @media(min-width:1280px){
   .evlist,.spons-grid{max-width:900px}
   .ggrid{grid-template-columns:repeat(4,1fr)}
+  #galeria .ggrid{grid-template-columns:1fr 1fr 1fr}
   .gi:first-child,.gi:nth-child(4){grid-column:span 2}
   .plans{max-width:1100px}
 }
+
+/* Planos membros — zoom hover */
+#membros .plan:hover{transform:scale(1.04);box-shadow:0 16px 48px rgba(0,0,0,.6)}
+#membros .plan.ft{transform:scale(1.05)}
+#membros .plan.ft:hover{transform:scale(1.09);box-shadow:0 20px 56px rgba(201,168,76,.15)}
 
 /* Index-specific hover effects */
 .mqc-item{overflow:hidden}
