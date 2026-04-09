@@ -402,6 +402,23 @@ section[id]{scroll-margin-top:64px}
   .page-hero{aspect-ratio:21/7}
   .djs-hero{aspect-ratio:21/7}
 }
+
+/* ===== HOVER EFFECTS ===== */
+/* Foco nas fotos */
+.mqc-item{transition:opacity .3s,filter .3s,transform .3s}
+.mqc-col:has(.mqc-item:hover) .mqc-item:not(:hover){opacity:.45;filter:brightness(.45)}
+.mqc-col:has(.mqc-item:hover) .mqc-item:hover{transform:scale(1.04);filter:brightness(1.1)}
+
+/* Botões principais */
+.btn-g{transition:transform .2s,box-shadow .2s,background .2s}
+.btn-g:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,.35)}
+.btn-o{transition:transform .2s,border-color .2s,color .2s}
+.btn-o:hover{transform:translateY(-2px);border-color:#C9A84C;color:#C9A84C}
+
+/* Botões de plano */
+.plcta{transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.plcta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,.3);background:#C9A84C;color:#030303}
+/* ===== END HOVER EFFECTS ===== */
 </style>
 </head>
 <body>
@@ -603,9 +620,9 @@ section[id]{scroll-margin-top:64px}
   <h2>JOIN THE<br><span style="color:#C9A84C">TRIBE</span></h2>
   <p class="desc">Acesso exclusivo a eventos, descontos na loja e conteúdo premium.</p>
   <div class="plans">
-    <div class="plan"><div class="plname">Free Runner</div><div class="plprice"><span>R$</span>0</div><div class="plper">gratuito</div><ul class="plfeats"><li>Blog e notícias</li><li>Newsletter</li><li>Playlist mensal</li><li>5% desconto</li></ul><a href="#" class="plcta">Criar Conta</a></div>
-    <div class="plan ft"><div class="plbadge">Mais Popular</div><div class="plname">Bass Runner</div><div class="plprice"><span>R$</span>49</div><div class="plper">/mês · cancele quando quiser</div><ul class="plfeats"><li>Priority em eventos</li><li>20% desconto</li><li>Treinos exclusivos</li><li>Discord privado</li><li>Badge de membro</li></ul><a href="#" class="plcta">Assinar Agora</a></div>
-    <div class="plan"><div class="plname">Crew Elite</div><div class="plprice"><span>R$</span>99</div><div class="plper">/mês · acesso total</div><ul class="plfeats"><li>2 eventos grátis/mês</li><li>Kit físico</li><li>30% desconto</li><li>Meet & Greet DJs</li><li>Foto/vídeo pro</li></ul><a href="#" class="plcta">Assinar Elite</a></div>
+    <div class="plan"><div class="plname">Free Runner</div><div class="plprice"><span>R$</span>0</div><div class="plper">gratuito</div><ul class="plfeats"><li>Blog e notícias</li><li>Newsletter</li><li>Playlist mensal</li><li>5% desconto</li></ul><div id="plcta-free"></div></div>
+    <div class="plan ft"><div class="plbadge">Mais Popular</div><div class="plname">Bass Runner</div><div class="plprice"><span>R$</span>49</div><div class="plper">/mês · cancele quando quiser</div><ul class="plfeats"><li>Priority em eventos</li><li>20% desconto</li><li>Treinos exclusivos</li><li>Discord privado</li><li>Badge de membro</li></ul><div id="plcta-bass"></div></div>
+    <div class="plan"><div class="plname">Crew Elite</div><div class="plprice"><span>R$</span>99</div><div class="plper">/mês · acesso total</div><ul class="plfeats"><li>2 eventos grátis/mês</li><li>Kit físico</li><li>30% desconto</li><li>Meet & Greet DJs</li><li>Foto/vídeo pro</li></ul><div id="plcta-elite"></div></div>
   </div>
 </div>
 
@@ -823,6 +840,52 @@ window.addEventListener('scroll',function(){
     plxRaf=false;
   });}
 },{passive:true});
+</script>
+
+<!-- React Islands -->
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+<script>
+(function(){
+  const {useState,useEffect} = React;
+
+  const plans = {
+    free:  {label:'Criar Conta',  loadLabel:'Criando...', doneLabel:'Conta Criada!'},
+    bass:  {label:'Assinar Agora',loadLabel:'Processando...',doneLabel:'Assinado!'},
+    elite: {label:'Assinar Elite',loadLabel:'Processando...',doneLabel:'Bem-vindo!'}
+  };
+
+  function PlanButton({plano}){
+    const [state,setState] = useState('idle'); // idle | loading | done
+    const cfg = plans[plano];
+
+    function handleClick(){
+      if(state !== 'idle') return;
+      setState('loading');
+      setTimeout(()=>setState('done'),1800);
+      setTimeout(()=>setState('idle'),4000);
+    }
+
+    const label = state==='loading' ? cfg.loadLabel : state==='done' ? cfg.doneLabel : cfg.label;
+
+    return React.createElement('button',{
+      className:'plcta',
+      onClick:handleClick,
+      disabled: state==='loading',
+      style:{
+        width:'100%',
+        opacity: state==='loading' ? 0.75 : 1,
+        cursor: state==='loading' ? 'not-allowed' : 'pointer',
+        transition:'all .2s'
+      }
+    }, label);
+  }
+
+  ['free','bass','elite'].forEach(function(p){
+    const el = document.getElementById('plcta-'+p);
+    if(el) ReactDOM.createRoot(el).render(React.createElement(PlanButton,{plano:p}));
+  });
+})();
 </script>
 </body>
 </html>
