@@ -357,7 +357,7 @@ footer{border-top:1px solid #1A1A1A!important}
   .page-hero-text{left:120px;right:120px}
   .sec{padding:80px 120px}
   .evlist,.spons-grid{max-width:900px}
-  .dj-list{grid-template-columns:1fr 1fr 1fr;max-width:1100px;column-gap:36px;row-gap:36px}
+  .dj-list{grid-template-columns:1fr 1fr 1fr;max-width:1380px;padding:0 24px;column-gap:88px;row-gap:88px}
   .ggrid{grid-template-columns:repeat(4,1fr)}
   .gi:first-child,.gi:nth-child(4){grid-column:span 2}
   .plans{max-width:1100px}

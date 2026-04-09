@@ -118,6 +118,13 @@ section[id]{scroll-margin-top:64px}
 }
 
 @media(min-width:960px){
+  /* Layout DJs: Paludo centralizado solo, 2 DJs à esq, 2 à dir */
+  .dj-list .dj-card:nth-child(1){grid-column:2;grid-row:1/span 2;align-self:center}
+  .dj-list .dj-card:nth-child(2){grid-column:1;grid-row:1}
+  .dj-list .dj-card:nth-child(3){grid-column:3;grid-row:1}
+  .dj-list .dj-card:nth-child(4){grid-column:1;grid-row:2}
+  .dj-list .dj-card:nth-child(5){grid-column:3;grid-row:2}
+
   #home{min-height:100vh}
   .hero-art{height:100vh;width:100%;object-fit:cover;object-position:center top}
   .hero-content{padding:60px 80px 100px;max-width:800px}
