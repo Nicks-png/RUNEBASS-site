@@ -147,10 +147,9 @@ section[id]{scroll-margin-top:64px}
 /* Index-specific section responsive */
 @media(min-width:768px){
   .evlist{flex-direction:row;gap:3px;align-items:stretch}
-  .dj-list{gap:3px}
 }
 @media(min-width:1280px){
-  .evlist,.dj-list,.spons-grid{max-width:900px}
+  .evlist,.spons-grid{max-width:900px}
   .ggrid{grid-template-columns:repeat(4,1fr)}
   .gi:first-child,.gi:nth-child(4){grid-column:span 2}
   .plans{max-width:1100px}
