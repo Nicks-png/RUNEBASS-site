@@ -233,13 +233,13 @@ footer{border-top:1px solid #1A1A1A!important}
   .desk-nav{display:flex;align-items:center;gap:26px}
   .desk-nav a{font-size:.63rem;letter-spacing:.16em;color:rgba(240,237,230,.6);text-decoration:none;text-transform:uppercase;font-weight:700;transition:color .2s}
   .desk-nav a:hover,.desk-nav a.active{color:#C9A84C}
-  .desk-nav .cta{background:#C9A84C;color:#030303;padding:9px 22px;font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;text-decoration:none}
+  .desk-nav .cta{background:#C9A84C;color:#030303;padding:11px 28px;font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:6px}
   .desk-nav .cta:hover{opacity:.85}
 }
 /* Desktop nav (urban palette) */
 .desk-nav a{color:#777!important}
 .desk-nav a:hover,.desk-nav a.active{color:#C9A84C!important}
-.desk-nav .cta{background:#C9A84C!important;color:#000!important}
+.desk-nav .cta{background:#C9A84C!important;color:#030303!important;border-radius:6px}
 /* ===== END URBAN PALETTE ===== */
 
 /* Bottom tab bar */
@@ -269,7 +269,7 @@ footer{border-top:1px solid #1A1A1A!important}
 
 /* CTA nav desktop */
 .desk-nav .cta{transition:background .2s,transform .15s}
-.desk-nav .cta:hover{background:#b8943e;transform:translateY(-1px)}
+.desk-nav .cta:hover{background:#b8943e!important;color:#030303!important;transform:translateY(-1px)}
 
 /* Link teaser */
 .t-link{transition:letter-spacing .25s,opacity .2s}
