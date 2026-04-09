@@ -85,10 +85,13 @@ footer{background:#030303;padding:48px 22px 28px;border-top:1px solid rgba(201,1
 .mqc-item{flex:1;display:flex;justify-content:center;align-items:center}
 .mqc-img{max-height:120px;max-width:100%;width:auto;height:auto;display:block;filter:brightness(.85) contrast(1.05)}
 .pils{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:24px;border:1px solid rgba(201,168,76,.12)}
-.pil{padding:16px 14px;border:1px solid rgba(201,168,76,.07);background:#070707}
-.pico{font-size:1.4rem;margin-bottom:5px}
-.pttl{font-size:.95rem;font-weight:700;color:#C9A84C;margin-bottom:3px;text-transform:uppercase}
-.pdsc{font-size:.55rem;color:rgba(240,237,230,.4);line-height:1.5}
+.pil{padding:22px 18px;border:1px solid rgba(201,168,76,.07);background:#070707;border-left:2px solid transparent;transition:border-color .3s,background .3s}
+.pil:hover{border-left-color:#C9A84C;background:#0c0c0c}
+.pico{margin-bottom:8px;line-height:0}
+.pttl{font-size:.95rem;font-weight:700;color:#C9A84C;margin-bottom:5px;text-transform:uppercase}
+.pdsc{font-size:.65rem;color:rgba(240,237,230,.55);line-height:1.6}
+.pnum{font-size:.42rem;letter-spacing:.3em;color:rgba(201,168,76,.35);margin-bottom:8px;font-weight:700}
+.pils-sep{width:40px;height:1px;background:#C9A84C;margin:18px 0 24px;opacity:.5}
 .spons-grid{display:flex;flex-direction:column;gap:2px}
 .spons-card{display:flex;flex-direction:column;background:#080808;border:1px solid rgba(201,168,76,.1);padding:22px 20px;text-decoration:none;border-left:3px solid transparent;transition:border-color .2s}
 .spons-card:active{border-left-color:#C9A84C}
@@ -309,8 +312,9 @@ footer{border-top:1px solid #1A1A1A!important}
 /* Sobre */
 .alt{background:#080808!important}
 .pils{border:1px solid #1C1C1C!important}
-.pil{background:#070707!important;border:1px solid #1A1A1A!important}
-.pdsc{color:#555!important}
+.pil{background:#070707!important;border:1px solid #1A1A1A!important;border-left:2px solid transparent!important}
+.pil:hover{border-left-color:#C9A84C!important;background:#0c0c0c!important}
+.pdsc{color:rgba(240,237,230,.55)!important}
 .spons-card{background:#070707!important;border:1px solid #1C1C1C!important;border-left:3px solid transparent!important}
 .spons-card:hover,.spons-card:active{border-left-color:#C9A84C!important}
 .spons-role{color:#555!important}
@@ -495,11 +499,12 @@ section+section{border-top:1px solid rgba(201,168,76,.07)}
 <section class="sec">
   <p class="lbl">Nossos Pilares</p>
   <h2>O QUE NOS<br><span class="ol2">MOVE</span></h2>
+  <div class="pils-sep"></div>
   <div class="pils">
-    <div class="pil"><div class="pico">🏃</div><div class="pttl">Corrida</div><div class="pdsc">Runs noturnos e diurnos com trilha sonora ao vivo.</div></div>
-    <div class="pil"><div class="pico">🎵</div><div class="pttl">Música</div><div class="pdsc">DJs que transformam ritmo em combustível.</div></div>
-    <div class="pil"><div class="pico">👟</div><div class="pttl">Moda</div><div class="pdsc">Estética dark e exclusiva do asfalto.</div></div>
-    <div class="pil"><div class="pico">⚡</div><div class="pttl">Comunidade</div><div class="pdsc">68,8K conectados em SP e além.</div></div>
+    <div class="pil"><div class="pnum">01</div><div class="pico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="pttl">Corrida</div><div class="pdsc">Runs noturnos e diurnos com trilha sonora ao vivo.</div></div>
+    <div class="pil"><div class="pnum">02</div><div class="pico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><div class="pttl">Música</div><div class="pdsc">DJs que transformam ritmo em combustível.</div></div>
+    <div class="pil"><div class="pnum">03</div><div class="pico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></div><div class="pttl">Moda</div><div class="pdsc">Estética dark e exclusiva do asfalto.</div></div>
+    <div class="pil"><div class="pnum">04</div><div class="pico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><div class="pttl">Comunidade</div><div class="pdsc">68,8K conectados em SP e além.</div></div>
   </div>
 </section>
 <section class="sec alt">
