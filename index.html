@@ -404,10 +404,10 @@ section[id]{scroll-margin-top:64px}
 }
 
 /* ===== HOVER EFFECTS ===== */
-/* Foco nas fotos */
-.mqc-item{transition:opacity .3s,filter .3s,transform .3s}
-.mqc-col:has(.mqc-item:hover) .mqc-item:not(:hover){opacity:.45;filter:brightness(.45)}
-.mqc-col:has(.mqc-item:hover) .mqc-item:hover{transform:scale(1.04);filter:brightness(1.1)}
+/* Zoom suave em todas as imagens */
+.mqc-item{overflow:hidden}
+img:not(.logo-img):not(.flogo-img):not(.hero-mascote){transition:transform .45s cubic-bezier(.25,.46,.45,.94)}
+img:not(.logo-img):not(.flogo-img):not(.hero-mascote):hover{transform:scale(1.05)}
 
 /* Botões principais */
 .btn-g{transition:transform .2s,box-shadow .2s,background .2s}
