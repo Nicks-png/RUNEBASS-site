@@ -37,10 +37,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 20px;display:fl
 .btn-o:hover::after{opacity:1;transform:translate(2px,-2px)}
 .lbl{font-size:.48rem;letter-spacing:.32em;color:#C9A84C;text-transform:uppercase;display:flex;align-items:center;gap:10px;margin-bottom:10px}
 .lbl::before{content:'';width:24px;height:1px;background:linear-gradient(90deg,#C9A84C,rgba(201,168,76,.2))}
-h2{font-size:clamp(2.4rem,10vw,3.8rem);line-height:1.15;font-weight:900;text-transform:uppercase;letter-spacing:.02em;position:relative;overflow:hidden}
-h2::after{content:'';position:absolute;top:0;left:-100%;width:55%;height:100%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.07) 40%,rgba(255,255,255,.18) 50%,rgba(255,255,255,.07) 60%,transparent 100%);animation:h2-shine 5s ease-in-out infinite;pointer-events:none}
-@keyframes h2-shine{0%{left:-100%}60%,100%{left:150%}}
-.ol2{-webkit-text-stroke:1px #F0EDE6;color:#030303;paint-order:stroke fill;letter-spacing:.05em}
+h2{font-size:clamp(2.4rem,10vw,3.8rem);line-height:1.15;font-weight:900;text-transform:uppercase;letter-spacing:.02em}
+.ol2{-webkit-text-stroke:1px #F0EDE6;color:#030303;paint-order:stroke fill;letter-spacing:.05em;position:relative;display:inline-block;overflow:hidden}
+.ol2::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.08) 40%,rgba(255,255,255,.22) 50%,rgba(255,255,255,.08) 60%,transparent 100%);animation:ol2-shine 5s ease-in-out infinite;pointer-events:none}
+@keyframes ol2-shine{0%{left:-100%}60%,100%{left:160%}}
 .alt .ol2{color:#0a0a0a}
 .sec.alt .ol2{color:#0a0a0a}
 .desc{font-size:.88rem;color:rgba(240,237,230,.55);line-height:1.8;margin-top:14px}
