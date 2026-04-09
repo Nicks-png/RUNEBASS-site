@@ -166,6 +166,8 @@ section[id]{scroll-margin-top:64px}
 .mqc-item{overflow:hidden}
 img:not(.logo-img):not(.flogo-img):not(.hero-mascote){transition:transform .5s cubic-bezier(.25,.46,.45,.94),border-radius .5s;border-radius:6px}
 img:not(.logo-img):not(.flogo-img):not(.hero-mascote):hover{transform:scale(1.03);border-radius:12px}
+#djs .dj-card:hover img{transform:none;border-radius:0}
+#djs .dj-card:hover{transform:scale(1.06);z-index:2}
 .btn-g{transition:box-shadow .3s,transform .2s}
 .btn-g:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(201,168,76,.4)}
 .btn-o{transition:transform .2s,border-color .25s,color .25s}

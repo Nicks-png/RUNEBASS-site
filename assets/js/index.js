@@ -41,7 +41,7 @@ rvEls.forEach(function(el){rvObs.observe(el);});
 document.querySelectorAll('.ol2').forEach(function(el){el.setAttribute('data-text',el.textContent);});
 
 // Paralaxe nas fotos
-var plxEls=document.querySelectorAll('.page-hero img,.djs-hero img,.dj-card img,.dj-stage-img');
+var plxEls=document.querySelectorAll('.page-hero img,.djs-hero img,.dj-stage-img');
 plxEls.forEach(function(el){el.classList.add('parallax-img');});
 var plxRaf=false;
 window.addEventListener('scroll',function(){
