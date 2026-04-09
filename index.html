@@ -39,8 +39,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 20px;display:fl
 .lbl::before{content:'';width:24px;height:1px;background:linear-gradient(90deg,#C9A84C,rgba(201,168,76,.2))}
 h2{font-size:clamp(2.4rem,10vw,3.8rem);line-height:1.15;font-weight:900;text-transform:uppercase;letter-spacing:.02em}
 .ol2{-webkit-text-stroke:1px #F0EDE6;color:#030303;paint-order:stroke fill;letter-spacing:.05em;display:inline-block;position:relative}
-.ol2::after{content:attr(data-text);position:absolute;inset:0;background:linear-gradient(105deg,#030303 0%,#030303 38%,#555 46%,#aaa 50%,#555 54%,#030303 62%,#030303 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:0;animation:ol2-reflect 5s ease-in-out infinite;pointer-events:none;font:inherit;letter-spacing:inherit}
-@keyframes ol2-reflect{0%,25%{background-position:167% 0}75%,100%{background-position:-67% 0}}
+.ol2::after{content:attr(data-text);position:absolute;inset:0;background:linear-gradient(90deg,#030303 0%,#030303 40%,#666 46%,#ccc 50%,#666 54%,#030303 60%,#030303 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-stroke:0;animation:ol2-reflect 5s ease-in-out infinite;pointer-events:none;font:inherit;letter-spacing:inherit}
+@keyframes ol2-reflect{0%,25%{background-position:200% 0}75%,100%{background-position:-100% 0}}
 .desc{font-size:.88rem;color:rgba(240,237,230,.55);line-height:1.8;margin-top:14px}
 footer{background:#030303;padding:48px 22px 28px;border-top:1px solid rgba(201,168,76,.1)}
 .flogo-img{height:26px;object-fit:contain;margin-bottom:10px}
