@@ -30,15 +30,20 @@ h2{line-height:1.15}
 .ol2w::after{content:attr(data-text);position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,transparent 38%,rgba(255,255,255,.3) 46%,rgba(255,255,255,.88) 50%,rgba(255,255,255,.3) 54%,transparent 62%,transparent 100%);background-size:200% 100%;background-repeat:no-repeat;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ol2-reflect 10s ease-in-out infinite;pointer-events:none;font:inherit;letter-spacing:inherit}
 
 /* Hero section */
-#home{min-height:100svh;padding:80px 0 0;display:flex;flex-direction:column;position:relative;overflow:hidden;background:#030303}
-.hero-art{width:100%;display:block;object-fit:cover;filter:brightness(.65) contrast(1.1)}
+#home{min-height:100svh;padding:0;display:flex;flex-direction:column;position:relative;overflow:hidden;background:#030303}
+.hero-art{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(.65) contrast(1.1);transform:scale(1.15);transform-origin:center center}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(3,3,3,.5) 0%,rgba(3,3,3,.15) 35%,rgba(3,3,3,.8) 70%,#030303 100%)}
 .hero-content{position:absolute;bottom:0;left:0;right:0;padding:28px 22px 44px}
 .hero-mascote{width:52px;margin-bottom:12px;border-radius:30px;drop-shadow(0 0 10px rgba(201,168,76,.5))}
 .rotulo-hero{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,14vw,5rem);color:#F2F2F2;line-height:1;letter-spacing:.04em;margin-bottom:10px;display:block}
 .hsub{font-size:.9rem;color:rgba(240,237,230,.65);line-height:1.7;margin-bottom:22px}
 .btns{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.hst{display:flex;gap:24px}
+.hst{display:flex;gap:24px;margin-bottom:20px}
+.hero-sponsors{display:flex;align-items:center;gap:10px;margin-top:4px}
+.hs-label{font-size:.42rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,237,230,.35);font-weight:700}
+.hs-item{font-size:.58rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,237,230,.55);text-decoration:none;transition:color .2s}
+.hs-item:hover{color:#C9A84C}
+.hs-dot{width:3px;height:3px;background:rgba(240,237,230,.25);border-radius:50%}
 .sn{font-size:1.9rem;font-weight:900;color:#C9A84C}
 .sl{font-size:.48rem;letter-spacing:.12em;color:rgba(240,237,230,.4);text-transform:uppercase}
 
@@ -145,7 +150,7 @@ section[id]{scroll-margin-top:64px}
   .dj-list .dj-card:nth-child(5){grid-column:3;grid-row:2}
 
   #home{min-height:100vh}
-  .hero-art{height:100vh;width:100%;object-fit:cover;object-position:center top}
+  .hero-art{height:100vh;object-position:center top}
   .hero-content{padding:60px 80px 100px;max-width:800px}
   .rotulo-hero{margin-bottom:18px}
   .hero-mascote{width:72px;margin-bottom:18px}
